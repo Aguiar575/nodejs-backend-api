@@ -102,7 +102,7 @@ dist
 
 
 #local_env
-env.ts
+.env
 
 # TernJS port file
 .tern-port

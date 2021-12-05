@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import environment from '../env'
+import './lib/env'
 
 class App {
     public express: express.Application;
@@ -19,7 +19,8 @@ class App {
     }
 
     private database (): void {
-      mongoose.connect(environment.database.dev)
+    //   mongoose.connect('mongodb://localhost:27017')
+      mongoose.connect(process.env.MONGO_DB_URI)
     }
 
     private routes (): void {
