@@ -1,6 +1,7 @@
+import mongoose from 'mongoose'
+import routes from './routes'
 import express from 'express'
 import cors from 'cors'
-import mongoose from 'mongoose'
 import './lib/env'
 
 class App {
@@ -19,14 +20,11 @@ class App {
     }
 
     private database (): void {
-    //   mongoose.connect('mongodb://localhost:27017')
       mongoose.connect(process.env.MONGO_DB_URI)
     }
 
     private routes (): void {
-      this.express.get('/', (req, res) => {
-        return res.send('Hello World')
-      })
+      this.express.use(routes)
     }
 }
 
