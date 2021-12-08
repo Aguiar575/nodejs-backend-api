@@ -1,2 +1,2 @@
-# nodejs-backend-api
-API to register companies, units, assets and users.
+# typescript-simple-api
+this API is a crud of users 🤯
